@@ -1,0 +1,11 @@
+.videoplayer {
+  width: 800px;
+  height: calc(9 / 15 * width);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
