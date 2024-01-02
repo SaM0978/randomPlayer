@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
+import LoginPage from "./components/LoginPage";
+import UploadVideo from "./components/UploadVideo";
 
 function App() {
+  let isLogged = false
   useEffect(() => {
-    if (logstatus == undefined) {
-      elemebt;
+    const logStatus = sessionStorage.getItem("loginStatus");
+    if (logStatus) {
+      isLogged = true
     }
   }, []);
+
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={isLogged ? <Home/> : <LoginPage/>} />
+          <Route path="/video" element={<UploadVideo/>} />
         </Routes>
       </BrowserRouter>
     </>
