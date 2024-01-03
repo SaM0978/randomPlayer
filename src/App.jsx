@@ -4,8 +4,8 @@ import Home from "./components/Home";
 
 function App() {
   useEffect(() => {
-    if (logstatus == undefined) {
-      elemebt;
+    let logstatus = sessionStorage.getItem("loginStatus");
+    if (logstatus) {
     }
   }, []);
   return (
